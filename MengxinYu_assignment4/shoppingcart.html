@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="css/shopping.css">
+<link rel="stylesheet" href="css/zerogrid.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+
+</head>
+<body>
+<!--Header-->
+<header class="zerogrid">
+<div class="logo"><img src="images/logo.png" height="150px" width="250px" /></div>
+<div id='cssmenu' class="align-center">
+<ul>
+<li><a href='index.html'><span>Home</span></a></li>
+<li><a href='menu.html'><span>Menu</span></a></li>
+<li><a href='#'><span>About</span></a></li>
+<li><a href='#'><span>Contacts</span></a></li>
+<li><a href='shoppingcart.html'><span>Cart:<span id="show-number"></span></span></a></li>
+</ul>
+</div>
+</header>
+
+
+
+<div id="bNav" class="bNav">
+    <button id="clear-cart"> Clear the cart </button>
+    <ul id="show-cart">
+    </ul>
+    </div>
+
+    
+    
+<div class="foot" id="foot">
+<div class="fr total">Total price <span id="total-price">  </span></div>
+<div class="fr selected" >Selected Items <span id="total-number">  </span></div>
+</div>
+
+<script src="js.js"></script>
+<script>
+
+function displayCart(){
+var cartArray = MXY_shoppingCart.listCart();
+var output="";
+for (var i in cartArray){
+output += "<li>" 
++ "  <button class='delete-item' data-name='"+cartArray[i].name+"'> X </button>"
++ " " + cartArray[i].name + " "
++ " " + " " + " " + " " +cartArray[i].number 
++ " X " + "$" + cartArray[i].price
++ " = " + "$" + cartArray[i].total
++ "  <button class='plus-item' data-name='"+cartArray[i].name+"'> + </button>" 
++ "  <button class='subtract-item' data-name='"+cartArray[i].name+"'> - </button>"
++ "</li>" ;
+}
+
+$("#show-cart").html(output);
+var totalNumber = MXY_shoppingCart.countTotalNumber();
+$("#total-number").html(totalNumber);
+$("#show-number").html(totalNumber);
+var totalPrice = MXY_shoppingCart.countTotalPrice();
+$("#total-price").html('$' + totalPrice);
+}    
+
+$("#clear-cart").click(function(event){
+MXY_shoppingCart.clearCart();
+displayCart();
+})
+$("#show-cart").on("click", ".delete-item", function(event){
+var name = $(this).attr("data-name");
+MXY_shoppingCart.removeItemFromCart(name);
+displayCart();
+})
+$("#show-cart").on("click", ".subtract-item", function(event){
+var name= $(this).attr("data-name");
+MXY_shoppingCart.minusItemNumberFromCart(name);
+displayCart();
+})
+$("#show-cart").on("click", ".plus-item", function(event){
+var name= $(this).attr("data-name");
+var size= $(this).attr("data-size");
+MXY_shoppingCart.addItemToCart(name,1,size,0);
+displayCart();
+})
+
+
+
+displayCart();
+
+</script>
+<!-- Banner Wrapper -->
+<div id="banner-wrapper">
+<div class="inner">
+<section id="banner" class="container">
+<p>Join The Bakery™ to earn <strong> Gold level benefits </strong>like free drinks and food <br />Get free refills, pay and order with your phone, and more.</p>
+</section>
+</div>
+</div>
+
+<!--Footer-->
+<footer>
+<div class="zerogrid">
+<div class="col-1-2">
+<div class="wrap-col">
+<span class="phone">CALL US:421-4245-6239</span><br/>
+<span>My Company , 5434 Claybourne Street</span><br/>
+<span>Email: mengxiny@cmu.org</span>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

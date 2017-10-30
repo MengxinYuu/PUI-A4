@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+
+    <!-- Basic Page Needs -->
+	<meta charset="utf-8">
+	<title>Baking</title>
+    
+    <!-- CSS -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+
+</head>
+
+<body>
+<div class="wrap-body">
+
+	<!--Header-->
+	<header class="zerogrid">
+		<div class="logo"><img src="images/logo.png" height="150px" width="250px" /></div>
+		<div id='cssmenu' class="align-center">
+			<ul>
+			   <li><a href='index.html'><span>Home</span></a></li>
+			   <li><a href='menu.html'><span>Menu</span></a></li>
+			   <li><a href='#'><span>About</span></a></li>
+			   <li><a href='#'><span>Contacts</span></a></li>
+               <li><a href='shoppingcart.html'><span>Cart:<span id="show-number"></span></span></a></li>
+			</ul>
+		</div>
+	</header>
+
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<div id="main-content" class="zerogrid">
+					<div class="row">
+						<article>
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<img src="images/item8.png" />
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<p id="changeContent">One pack of cinnamon rolls are popular for enjoy your personal time. Our cinnamon roll is made by enriched wheat flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, butter (pasteurized cream), sugar, brown sugar, nonfat milk, eggs, yeast, salt, mono- & diglycerides, cinnamon, canola oil, corn starch. contains: wheat, egg, and milk. manufactured on shared equipment processing tree nuts and soy </p>
+										
+                                        <div class="goodinfo" id="size">Size
+                                            <button class="add-to-cart" data-name="Strawberry Rhubarb-onepack" data-price="4.00">One Pack</button>
+                                            <button class="add-to-cart" data-name="Strawberry Rhubarb-sixpack" data-price="23.00">Six Pack</button>
+                                        <div id="price">price: $ 4.00</div>
+                                        <div class="goodinfo" >Number<input type="number" min="1" id="itemNumber" value="1"/></div>   
+                                        <script src="js.js"></script>
+                                        <script>
+                                                            
+                                            
+                            
+                                            var totalNumber = MXY_shoppingCart.countTotalNumber();
+                                            $("#show-number").html(totalNumber);
+                                            $(".add-to-cart").click(function(event){
+                                            event.preventDefault();
+                                            var name = $(this).attr("data-name");
+                                            var price = Number($(this).attr("data-price"));
+                                            var number = Number($("#itemNumber").val());
+                                            MXY_shoppingCart.addItemToCart(name, number, " ", price);
+                                            //console.log(cart);
+                                            var name = $(this).attr("data-name");
+                                                if(name === "Strawberry Rhubarb-onepack"){
+                                                    $("#price").html("price: $ 4.00");
+                                                    $("#changeContent").html("One pack of cinnamon rolls are popular for enjoy your personal time. Our cinnamon roll is made by enriched wheat flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, butter (pasteurized cream), sugar, brown sugar, nonfat milk, eggs, yeast, salt, mono- & diglycerides, cinnamon, canola oil, corn starch. contains: wheat, egg, and milk. manufactured on shared equipment processing tree nuts and soy");
+                                                    var totalNumber = MXY_shoppingCart.countTotalNumber();
+                                                    $("#show-number").html(totalNumber);
+                                                }
+                                                else if(name === "Strawberry Rhubarb-sixpack"){
+                                                    $("#price").html("price: $ 23.00")
+                                                    $("#changeContent").html("Six packs of cinnamon rolls are popular for Parties and family gatherings. Whether you’re celebrating an anniversary, a birthday, graduation, a holiday or the start of your favorite sport’s season, entertaining can be quick, simple, affordable and fun if you plan ahead. Parties and family gatherings are popular this time of year and our cinnamon rolls will be your best choice.")
+                                                    var totalNumber = MXY_shoppingCart.countTotalNumber();
+                                                    $("#show-number").html(totalNumber);
+                                                }
+                                        })
+                                            
+                                           
+                                      
+                                        </script> 
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<div id="recommend">
+                                       
+										<div id="rgood">
+                                        <ul>
+                                            <li><a href="#" class="suggest"><img src="images/item3.png"></a>
+                                            </li>
+                                            <li><a href="#" class="suggest"><img src="images/item4.png"></a>
+                                            </li>
+                                            <li><button class="turning_button">up</button> <button class="turning_button">down</button></li>
+                                        </ul>
+                                    </div>
+									</div>
+								</div>
+							</div>
+						
+						<div class="header">
+							<hr class="line-2">
+							<h2>More Information</h2>
+						</div>
+                        <article>
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<p> Ingredients
+enriched unbleached flour (wheat flour, niacin, reduced iron, thiamin mononitrate, riboflavin, folic acid), water, dark raisins, oats, rye flour, molasses, eight grains blend (cracked wheat, steel cut oats, rye meal, yellow polenta, rolled barley, millet, rice bran, wheat germ, flaxseed, sunflower seeds, rolled wheat, rolled rye), rye meal, expeller pressed canola oil, contains 2% or less of the following: syrup (corn syrup, malt syrup, enzymes, caramel color), wheat bran, dough conditioner (wheat flour, mono diglycerides, corn syrup solids, guar and/or cellulose gum, soybean oil, enzymes, ascorbic acid), sea salt, yeast and sorbitan monostearate, cinnamon.</p>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<img src="images/vegan.png" />
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<img src="images/glutenfree.png" />
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!-- Banner Wrapper -->
+<div id="banner-wrapper">
+	<div class="inner">
+		<section id="banner" class="container">
+			<p>Join The Bakery™ to earn <strong> Gold level benefits </strong>like free drinks and food <br />Get free refills, pay and order with your phone, and more.</p>
+		</section>
+	</div>
+</div>
+
+	<!--Footer-->
+<footer>
+	<div class="zerogrid">
+		<div class="col-1-2">
+			<div class="wrap-col">
+				<span class="phone">CALL US:421-4245-6239</span><br/>
+				<span>My Company , 5434 Claybourne Street</span><br/>
+				<span>Email: mengxiny@cmu.org</span>
+			</div>
+		</div>
+	</div>
+</footer>
+	
+</div>
+</body>
+</html>
+
+
+
+
